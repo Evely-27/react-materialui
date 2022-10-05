@@ -29,6 +29,7 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 ## Comandos usados no curso:
 * npm install react-router-dom = serve para trabalhar navegação entre páginas.
 * npm instal add -D @types/react-router-dom = instala o types que serve para tipagem
+* npm install react-router-dom@6 = instala o react roputer dom para fazer a navegação pelo sistema
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
 
