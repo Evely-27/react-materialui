@@ -30,6 +30,8 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * npm install react-router-dom = serve para trabalhar navegação entre páginas.
 * npm instal add -D @types/react-router-dom = instala o types que serve para tipagem
 * npm install react-router-dom@6 = instala o react roputer dom para fazer a navegação pelo sistema
+* npm install @mui/material @emotion/react @emotion/styled =  comando para instalar o mui material
+* npm install @mui/icons-material = para trabalhar com os ícones dpo material UI
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
 
