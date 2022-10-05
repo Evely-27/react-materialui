@@ -7,16 +7,11 @@ export const AppRoutes = () => {
 
     return (
         <Routes>
-            {/* rota para /init mostarnto um <p> com mensagem 
-            contained = preencher tudo
-            */}
-            <Route path='/init' element={<Button variant='contained' color='primary'onClick={toggleTheme}>Mudar tema</Button>} />
-
-            {/* path * = vai vir paar cá qualquer rota que não foi configurada anteriormente */}
+            <Route path='/init' element={<Button variant='contained' color='primary'onClick={toggleTheme}>Mudar tema</Button>} 
+            />
             <Route path='*' element={<Navigate to="/init" />} />
-
 
         </Routes>
 
     );
-}
+};

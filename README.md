@@ -32,6 +32,7 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * npm install react-router-dom@6 = instala o react roputer dom para fazer a navegação pelo sistema
 * npm install @mui/material @emotion/react @emotion/styled =  comando para instalar o mui material
 * npm install @mui/icons-material = para trabalhar com os ícones dpo material UI
+* npm init @eslint/config =  para instalr o eslint para padronização de código
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
 

@@ -1,6 +1,6 @@
 //  responsavel pela troca de temas do sistema
 
-import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from "react";
+import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
 import {ThemeProvider} from '@mui/material';
 import {Box} from '@mui/system';
 import { DarkTheme, LightTheme } from './../themes';
@@ -21,7 +21,7 @@ const ThemeContext = createContext({} as IThemeContextData);
 // serve para usar pegar o tema e alterar entyre dark e light pelo tiggleTheme
 export const useAppThemeContext = () => {
     return useContext(ThemeContext);
-}
+};
 
 // export para mudança de theme entre dark e light
 export const AppThemeProvider:React.FC<IAppThemeProviderProps> = ({children}) => {
@@ -30,7 +30,7 @@ export const AppThemeProvider:React.FC<IAppThemeProviderProps> = ({children}) =>
     //useCallback =  armazena outra funções, que seão exextdas quando [] houver alteração
     // o if serve para verificar se o valor de ThemeName muda e alterar para os themes.
     const toggleTheme = useCallback(() => {
-        setThemeName(oldThemeName => oldThemeName === 'light'? 'dark': 'light')
+        setThemeName(oldThemeName => oldThemeName === 'light'? 'dark': 'light');
     },[]);
 
     // serve para quando o themeName sofrer alteração de valor.
@@ -49,4 +49,4 @@ export const AppThemeProvider:React.FC<IAppThemeProviderProps> = ({children}) =>
             </ThemeProvider>
         </ThemeContext.Provider>
     );
-}
+};
