@@ -1,6 +1,6 @@
 //  responsavel pela troca de temas do sistema
 
-import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import {ThemeProvider} from '@mui/material';
 import {Box} from '@mui/system';
 import { DarkTheme, LightTheme } from './../themes';
@@ -13,7 +13,7 @@ interface IThemeContextData{
 }
 // interface de propriedade para utilizar o children
 interface IAppThemeProviderProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 const ThemeContext = createContext({} as IThemeContextData);

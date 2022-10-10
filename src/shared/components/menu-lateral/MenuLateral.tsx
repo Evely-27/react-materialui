@@ -38,8 +38,6 @@ const ListItemLink: React.FC<IListItemLinkProps>= ({to, icon, label, onClick }) 
     );
 };
 
-
-
 interface IMenuLateralProps{
   children: ReactNode;
 }

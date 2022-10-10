@@ -1,5 +1,5 @@
 //  responsavel pelo fexamento do menu lateral = drawer
-import { createContext, ReactNode, useCallback, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
 // interface para definir as opções do drawer para navegação
 
@@ -18,7 +18,7 @@ interface IDrawerContextData{
 }
 // interface de propriedade para utilizar o children
 interface IDrawerProviderProps {
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 const DrawerContext = createContext({} as IDrawerContextData);
