@@ -1,14 +1,44 @@
 import { Avatar, Drawer, useTheme, Divider, List, ListItemButton,ListItemIcon, ListItemText, Icon, useMediaQuery} from '@mui/material';
 import { Box } from '@mui/system';
 import { ReactNode } from 'react';
+import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { useDrawerContext } from '../../contexts';
-/*
-variant= como queremo o formato
-variant/permanent = fixo, sempre mostrar
-variant/persistent = tipo sanfora, pode mostar ou não, e altera a expansão de outros compomnenetes
-variant/temporary = jun~]ao dos 2
-<> = fragment => aqui queremos por o menu lateral ao lado dos filhos.
-*/
+
+// componente para indenpendencia da navegação
+// to = nome da rota
+interface IListItemLinkProps {
+    to: string;
+    icon: string;
+    label: string;
+    onClick: (() => void) | undefined;
+
+}
+
+const ListItemLink: React.FC<IListItemLinkProps>= ({to, icon, label, onClick }) => {
+    const navigate = useNavigate();
+    /* função para navegar para outra tela
+    ?. = serve para verificar se é undefined, se sim, não fazer nada.
+    */
+    // confirgurações para deixar selecionada o caminho em que está.
+    const resolvePath = useResolvedPath(to);
+    const match= useMatch({path: resolvePath.pathname, end: false});
+
+    const handleClick = () => {
+        navigate(to);
+        onClick?.();
+    };
+
+    return (
+        <ListItemButton selected={!!match} onClick={handleClick}>
+            <ListItemIcon>
+                <Icon>{icon}</Icon>
+                <ListItemText primary={label} />
+            </ListItemIcon>               
+        </ListItemButton>
+    );
+};
+
+
 
 interface IMenuLateralProps{
   children: ReactNode;
@@ -26,7 +56,7 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
         up = se tiver acima do que definimos , traz true */
     const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const {isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
+    const {isDrawerOpen, toggleDrawerOpen, drawerOptions} = useDrawerContext();
 
     return (
         <>
@@ -47,16 +77,16 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
                     <Box flex={1}>
                         {/* lista da navegação */}
                         <List component='nav'>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <Icon>home</Icon>
-                                    <ListItemText primary='Página Inicial' />
-                                </ListItemIcon>
-                                  
-                            </ListItemButton>
-                              
+                            {drawerOptions.map(drawerOptions => (
+                                <ListItemLink
+                                    key={drawerOptions.path}
+                                    icon={drawerOptions.icon}
+                                    to={drawerOptions.path}
+                                    label={drawerOptions.label}
+                                    onClick={smDown ?toggleDrawerOpen : undefined}
+                                />
+                            ))}
                         </List>
-                          
                     </Box>
                 </Box>
             </Drawer>

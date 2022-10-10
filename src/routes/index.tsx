@@ -1,11 +1,22 @@
 import { Button } from '@mui/material';
+import { useEffect } from 'react';
 import {Routes, Route, Navigate} from 'react-router-dom';
 import {  useDrawerContext } from '../shared/contexts';
 
 export const AppRoutes = () => {
     // usar para trocar tema.
     // const {toggleTheme} = useAppThemeContext();
-    const {toggleDrawerOpen} = useDrawerContext();
+    const {toggleDrawerOpen, setDrawerOptions} = useDrawerContext();
+
+    useEffect(() => {
+        setDrawerOptions([
+            {
+                icon:'home',
+                path: '/init',
+                label: 'PÁGINA INICIAL'
+            }
+        ]);
+    }, []);
 
     return (
         <Routes>
