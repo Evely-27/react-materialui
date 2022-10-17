@@ -2,7 +2,8 @@ import { Avatar, Drawer, useTheme, Divider, List, ListItemButton,ListItemIcon, L
 import { Box } from '@mui/system';
 import { ReactNode } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
-import { useDrawerContext } from '../../contexts';
+import { useAppThemeContext, useDrawerContext } from '../../contexts';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 // componente para indenpendencia da navegação
 // to = nome da rota
@@ -56,6 +57,9 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
 
     const {isDrawerOpen, toggleDrawerOpen, drawerOptions} = useDrawerContext();
 
+    //const para mudar tema.
+    const { toggleTheme} = useAppThemeContext();
+
     return (
         <>
             {/* if ternário= se smDown for true, mudar paar temporary que usa o open, se não deixar permanat */}
@@ -84,6 +88,18 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
                                     onClick={smDown ?toggleDrawerOpen : undefined}
                                 />
                             ))}
+                        </List>
+                    </Box>
+
+                    <Box>
+                        {/* lista da navegação */}
+                        <List component='nav'>
+                            <ListItemButton  onClick={toggleTheme}>
+                                <ListItemIcon>
+                                    <Icon>dark_mode</Icon>
+                                    <ListItemText primary='Alternar Tema' />
+                                </ListItemIcon>               
+                            </ListItemButton>
                         </List>
                     </Box>
                 </Box>
