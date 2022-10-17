@@ -3,7 +3,6 @@ import { Box } from '@mui/system';
 import { ReactNode } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { useAppThemeContext, useDrawerContext } from '../../contexts';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 // componente para indenpendencia da navegação
 // to = nome da rota
