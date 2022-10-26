@@ -1,7 +1,7 @@
 import { Box, Button, Icon, Paper, TextField, useTheme } from '@mui/material';
 
 
-interface IBarraDeFerramentasProps {
+interface IFerramentasDaListagemProps {
     textoDeBusca?: string; 
     mostrarInputBusca?: boolean;
     aoMudarTextoDeBusca?: (novoTexto: string) =>void;
@@ -11,7 +11,7 @@ interface IBarraDeFerramentasProps {
     aoClicarEmNovo?: () =>void;
 }
 
-export const BarraDeFerramentas:React.FC<IBarraDeFerramentasProps> = ({
+export const FerramentasDaListagem:React.FC<IFerramentasDaListagemProps> = ({
     textoDeBusca= '',
     mostrarInputBusca = false,
     aoMudarTextoDeBusca,
@@ -31,7 +31,8 @@ export const BarraDeFerramentas:React.FC<IBarraDeFerramentasProps> = ({
             display= 'flex'     // vai mudar a forma como o layout se comport, padrão row=linha
             alignItems='center' // centralizar tudo
             height={theme.spacing(5)}  // altura do box
-            component={Paper}>
+            component={Paper}
+        >
 
             {/* só apacere ao ser pedida */}
             {mostrarInputBusca && (
@@ -56,7 +57,8 @@ export const BarraDeFerramentas:React.FC<IBarraDeFerramentasProps> = ({
                         variant='contained'
                         onClick={aoClicarEmNovo}
                         endIcon={<Icon>add</Icon>}
-                    >{textoBotaoNovo}</Button>
+                    >{textoBotaoNovo}
+                    </Button>
                 )}
             </Box>
         </Box>
