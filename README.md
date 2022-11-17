@@ -20,6 +20,7 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [Typescript](https://www.typescriptlang.org/docs/)
 * [Material Ui](https://mui.com/pt/material-ui/getting-started/installation/)
+* [Json-Server](https://www.npmjs.com/package/json-server)
 
 ### Criar projeto ReactJS com Typescript
 
@@ -33,8 +34,12 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * npm install @mui/material @emotion/react @emotion/styled =  comando para instalar o mui material
 * npm install @mui/icons-material = para trabalhar com os ícones dpo material UI
 * npm init @eslint/config =  para instalr o eslint para padronização de código
+* npm install -g json-server = serve para instalar o json-server
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
+* Vamos usar o JsonServer para simular APIs, instalamos ele como uma dependencia de desenvolviemnto para ser instalado logo no inicio e não vai para producação também.
+* pasta mock é para informações que vamos tratar como json-server.
+* Para rodar o json -server foi necessario usar o comando <npx json-server -w -p 3333 .\mock\database.json> já que estamos usando o pacote npm.
 
 
 [Link da playlist do curso no YouTube](https://youtube.com/playlist?list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ)
