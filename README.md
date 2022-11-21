@@ -35,6 +35,7 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * npm install @mui/icons-material = para trabalhar com os ícones dpo material UI
 * npm init @eslint/config =  para instalr o eslint para padronização de código
 * npm install -g json-server = serve para instalar o json-server
+* npm add axios = serve para instalar  a depedencia do axios.
 ## Anotações do desenvolvemnto:
 * O uso do "refactor" no git é para "refatoração" já que somente organizamos e limpamos o código.
 * Vamos usar o JsonServer para simular APIs, instalamos ele como uma dependencia de desenvolviemnto para ser instalado logo no inicio e não vai para producação também.
