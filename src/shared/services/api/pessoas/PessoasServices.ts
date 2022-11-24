@@ -47,14 +47,53 @@ const getAll = async (page= 1, filter = ''):Promise<TPessoasComTotalCount | Erro
     }
 };
 
-// const getById = async ():Promise<any> => { };
+const getById = async (id:number):Promise<IDetalhePessoa | Error> => {
+    try {
+        const {data} = await Api.get(`/pessoas/${id}`);
 
-// const create = async ():Promise<any> => { };
+        if (data) {
+            return data;
+        }
+        return new Error('Erro ao consultar o registro.');
+    }catch (error) {
+        console.log(error);   
+        return new Error((error as { message:string}).message || 'Erro ao realizar a consulta do registro!');
+    }
+};
 
-// const updateById = async ():Promise<any> => { };
+//(typescript) omit = permit omitir algum atributo que seria necessario, ja que o id ele que gera(bd)
+const create = async (dados:Omit<IDetalhePessoa,'id'>):Promise<number | Error> => { 
+    try {
+        const {data} = await Api.post<IDetalhePessoa>('/pessoas',dados);
 
-// const deletById = async ():Promise<any> => { };
+        if (data) {
+            return data.id; // deve retornar somente o id par mostrar que registrou
+        }
+        return new Error('Erro ao criar o registro.');
+    }catch (error) {
+        console.log(error);   
+        return new Error((error as { message:string}).message || 'Erro ao criar o registro!');
+    }
+};
 
+// somente manda a atualização das informações
+const updateById = async (id:number,dados: IDetalhePessoa):Promise<void | Error> => { 
+    try {
+        await Api.put<IDetalhePessoa>(`/pessoas/${id}`,dados);
+    }catch (error) {
+        console.log(error);   
+        return new Error((error as { message:string}).message || 'Erro ao atualizar o registro!');
+    }
+};
+
+const deletById = async (id:number):Promise<void | Error> => { 
+    try {
+        await Api.delete<IDetalhePessoa>(`/pessoas/${id}`);
+    }catch (error) {
+        console.log(error);   
+        return new Error((error as { message:string}).message || 'Erro ao deletar o registro!');
+    }
+};
 
 export const PessoasService = {
     getAll,
