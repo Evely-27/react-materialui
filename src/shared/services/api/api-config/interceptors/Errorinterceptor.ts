@@ -1,6 +1,8 @@
 import { AxiosError} from 'axios';
 
-// não começa com maiuscual pois é uam função.
+
+// inteceptions são os tratamentos que as APIS podem fazer com as responstas recebidas.
+// não começa com maiuscula pois é uam função.
 export const errorInterceptor = (error: AxiosError) => {
     
     if  ( error.message === 'Network Error' ) {

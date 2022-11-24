@@ -41,6 +41,7 @@ Este repositório é para o desenvolvimento das práticas de Front-End do Curso 
 * Vamos usar o JsonServer para simular APIs, instalamos ele como uma dependencia de desenvolviemnto para ser instalado logo no inicio e não vai para producação também.
 * pasta mock é para informações que vamos tratar como json-server.
 * Para rodar o json -server foi necessario usar o comando <npx json-server -w -p 3333 .\mock\database.json> já que estamos usando o pacote npm.
+* A pasta Services será usada par tratar os metodos do axios para ser usado no projeto.
 
 
 [Link da playlist do curso no YouTube](https://youtube.com/playlist?list=PL29TaWXah3iaqOejItvW--TaFr9NcruyQ)

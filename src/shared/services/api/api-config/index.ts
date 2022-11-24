@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Enviroment } from '../../../environment';
+import { Environment } from '../../../environment';
 import { errorInterceptor, responseInterceptor } from './interceptors';
 
 // vamos criar uma instancia do axios
 
 const Api = axios.create({
-    baseURL:Enviroment.URL_BASE,
+    baseURL:Environment.URL_BASE,
 });
 
 // é como vamos tratar as respostas
@@ -15,5 +15,4 @@ Api.interceptors.response.use(
 );
 export { Api};
 
-// interceptor: meio de campo entre uma chamada e o servidor
-
+// Api: meio de campo entre uma requisição de um  front e o banco de dados

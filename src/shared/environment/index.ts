@@ -2,10 +2,10 @@
 
 // constantes do sistema
 
-export const Enviroment = {
+export const Environment = {
 
     /**
-     * Defini a quantidfade de linhas carregas na listagem
+     * Defini a quantidade de linhas carregas na listagem
      */
     LIMITE_DE_LINHAS: 10,
     /**
