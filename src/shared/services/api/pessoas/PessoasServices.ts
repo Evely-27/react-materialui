@@ -2,14 +2,14 @@ import { Environment } from '../../../environment';
 import { Api } from '../api-config';
 
 // pessoas que vão ser retornadas para a listagem 
-interface IListagemPessoa {
+export interface IListagemPessoa {
     id:number;
     email: string;
     cidadeId: number; // para relacionar uma pessoa que perte4nce a uma cidade especifica 
     nomeCompleto: string;
 }
 // vai retorna os dados de uma instancia de pessoas, vai ser utlilizada em detalhes
-interface IDetalhePessoa {
+export interface IDetalhePessoa {
     id:number;
     email: string;
     cidadeId: number;
