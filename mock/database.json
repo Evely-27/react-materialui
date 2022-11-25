@@ -2,9 +2,9 @@
     "pessoas": [
         {
             "id": "1",
-            "nome": "carla",
-            "sobrenome": "marques"
-
+            "email": "carla.fereira@gmail.com",
+            "cidadeId": 520,
+            "nomeCompleto": "Carla Ferreira"
         }
     ]
 }
