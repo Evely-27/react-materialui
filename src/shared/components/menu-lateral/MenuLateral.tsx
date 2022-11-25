@@ -29,10 +29,10 @@ const ListItemLink: React.FC<IListItemLinkProps>= ({to, icon, label, onClick }) 
     };
 
     return (
-        <ListItemButton selected={!!match} onClick={handleClick}>
+        <ListItemButton selected={!!match} onClick={handleClick} >
             <ListItemIcon>
                 <Icon>{icon}</Icon>
-                <ListItemText primary={label} />
+                <ListItemText primary={label} sx={{paddingLeft: 2 }} />
             </ListItemIcon>               
         </ListItemButton>
     );
@@ -77,9 +77,9 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
                     {/* box para botões de navegação ocupando todo o resto disponivel*/}
                     <Box flex={1}>
                         {/* lista da navegação */}
-                        <List component='nav'>
+                        <List component='nav' >
                             {drawerOptions.map(drawerOptions => (
-                                <ListItemLink
+                                <ListItemLink 
                                     key={drawerOptions.path}
                                     icon={drawerOptions.icon}
                                     to={drawerOptions.path}
@@ -96,7 +96,7 @@ export const MenuLateral : React.FC<IMenuLateralProps> = ({ children }) => {
                             <ListItemButton  onClick={toggleTheme}>
                                 <ListItemIcon>
                                     <Icon>dark_mode</Icon>
-                                    <ListItemText primary='Alternar Tema' />
+                                    <ListItemText primary='Alternar Tema' sx={{paddingLeft: 2 }} />
                                 </ListItemIcon>               
                             </ListItemButton>
                         </List>

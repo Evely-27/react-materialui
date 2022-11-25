@@ -1,8 +1,11 @@
 
 import { useEffect } from 'react';
 import {Routes, Route, Navigate} from 'react-router-dom';
-import { Dashboard } from '../pages';
 import {  useDrawerContext } from '../shared/contexts';
+import { 
+    Dashboard,
+    ListagemDeCidade,
+} from '../pages';
 
 export const AppRoutes = () => {
     // usar para trocar tema.
@@ -15,6 +18,11 @@ export const AppRoutes = () => {
                 icon:'home',
                 path: '/init',
                 label: 'PÁGINA INICIAL'
+            },
+            {
+                icon:'location_city',
+                path: '/cidades',
+                label: 'CIDADES'
             }
         ]);
     }, []);
@@ -22,6 +30,10 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/init' element={<Dashboard />} />
+            <Route path='/cidades' element={<ListagemDeCidade />} />
+
+
+
             <Route path='*' element={<Navigate to="/init" />} />
 
         </Routes>
