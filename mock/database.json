@@ -1,94 +1,88 @@
 {
-    "pessoas": [
-        {
-            "id": "1",
-            "email": "carla.fereira@gmail.com",
-            "cidadeId": 520,
-            "nomeCompleto": "Carla Ferreira"
-        },
-        {
-            "id": "2",
-            "email": "harry.bugarius@gmail.com",
-            "cidadeId": 520,
-            "nomeCompleto": "Harry Bugarius"
-        },
-        {
-            "id": "3",
-            "email": "kaio.dalius@gmail.com",
-            "cidadeId": 520,
-            "nomeCompleto": "Kaio Dalius Forgues"
-        },
-        {
-            "id": "4",
-            "email": "victor_felix@gmail.com",
-            "cidadeId": 50,
-            "nomeCompleto": "Victor P. Felix"
-        },
-        {
-            "id": "5",
-            "email": "vl.f.cassiano@gmail.com",
-            "cidadeId": 520,
-            "nomeCompleto": "Vila Filtwh Cassiano"
-        },
-        {
-            "id": "6",
-            "email": "j_85665@gmail.com",
-            "cidadeId": 94,
-            "nomeCompleto": "Juliano Paulista"
-        },
-        {
-            "id": "7",
-            "email": "g.43.loucrenze@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Galatia Doublin Loucrenze"
-        },
-        {
-            "id": "8",
-            "email": "w.juca@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Willon Juca Ferreira"
-        },
-        {
-            "id": "9",
-            "email": "sam+100@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Sam Lous Tohdsn"
-        },
-        {
-            "id": "10",
-            "email": "t.e.c@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Talia Eutin Calvin"
-        },
-        {
-            "id": "11",
-            "email": "v.r@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Valentina  Rubens Nascimento"
-        },
-        {
-            "id": "12",
-            "email": "lucas_j@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Lucas L. H. Julião "
-        },
-        {
-            "id": "13",
-            "email": "rosa.96_5654@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Rosa Garcia Pereira"
-        },
-        {
-            "id": "14",
-            "email": "Keila.7865@hotmail.com",
-            "cidadeId": 65,
-            "nomeCompleto": "Keila Talison Campos"
-        },
-        {
-            "id": "15",
-            "email": "fabio.456@hotmail.com",
-            "cidadeId": 468,
-            "nomeCompleto": "Fabio Silas"
-        }
-    ]
+  "pessoas": [
+    {
+      "id": "2",
+      "email": "harry.bugarius@gmail.com",
+      "cidadeId": 520,
+      "nomeCompleto": "Harry Bugarius"
+    },
+    {
+      "id": "3",
+      "email": "kaio.dalius@gmail.com",
+      "cidadeId": 520,
+      "nomeCompleto": "Kaio Dalius Forgues"
+    },
+    {
+      "id": "4",
+      "email": "victor_felix@gmail.com",
+      "cidadeId": 50,
+      "nomeCompleto": "Victor P. Felix"
+    },
+    {
+      "id": "5",
+      "email": "vl.f.cassiano@gmail.com",
+      "cidadeId": 520,
+      "nomeCompleto": "Vila Filtwh Cassiano"
+    },
+    {
+      "id": "6",
+      "email": "j_85665@gmail.com",
+      "cidadeId": 94,
+      "nomeCompleto": "Juliano Paulista"
+    },
+    {
+      "id": "7",
+      "email": "g.43.loucrenze@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Galatia Doublin Loucrenze"
+    },
+    {
+      "id": "8",
+      "email": "w.juca@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Willon Juca Ferreira"
+    },
+    {
+      "id": "9",
+      "email": "sam+100@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Sam Lous Tohdsn"
+    },
+    {
+      "id": "10",
+      "email": "t.e.c@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Talia Eutin Calvin"
+    },
+    {
+      "id": "11",
+      "email": "v.r@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Valentina  Rubens Nascimento"
+    },
+    {
+      "id": "12",
+      "email": "lucas_j@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Lucas L. H. Julião "
+    },
+    {
+      "id": "13",
+      "email": "rosa.96_5654@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Rosa Garcia Pereira"
+    },
+    {
+      "id": "14",
+      "email": "Keila.7865@hotmail.com",
+      "cidadeId": 65,
+      "nomeCompleto": "Keila Talison Campos"
+    },
+    {
+      "id": "15",
+      "email": "fabio.456@hotmail.com",
+      "cidadeId": 468,
+      "nomeCompleto": "Fabio Silas"
+    }
+  ]
 }

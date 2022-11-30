@@ -1,18 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
-import { LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
-import { useSearchParams } from 'react-router-dom';
+import { Icon, IconButton, LinearProgress, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TableRow } from '@mui/material';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import {  IListagemPessoa, PessoasService } from '../../shared/services/api/pessoas/PessoasServices';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
-import { useDebounce } from '../../shared/hooks';
 import { Environment } from '../../shared/environment';
+import { useDebounce } from '../../shared/hooks';
 
 
 export const ListagemDePessoas:React.FC = ( ) => {
     //hook que nos retorna um array para poder usar mandar o textodebusca para o router
     const [ searchParams, setSearchParams] = useSearchParams();
     const { debounce} = useDebounce();
+    const navigate = useNavigate(); //const para editar o registro navegando para outra tela
 
     const [ rows, setRows] = useState<IListagemPessoa[]>([]);
     // serve para retorna um feedback visual ao usuario
@@ -23,7 +24,7 @@ export const ListagemDePessoas:React.FC = ( ) => {
         return searchParams.get('busca') || '';
     },[searchParams]);
 
-    // const para tratar da paginana qual estamos
+    // const para tratar da pagina na qual estamos
     const pagina= useMemo(( )=> {
         return Number(searchParams.get('pagina') || '1');
     },[searchParams]);
@@ -49,6 +50,26 @@ export const ListagemDePessoas:React.FC = ( ) => {
         });
     }, [busca, pagina]);
 
+    /* const para deletar usuario
+    confirm é um alert para confirmação
+    then para esperar a resposta e trabalhamos se for erro ou sucesso.
+    */
+    const handleDelete = (id:number) => {
+        if(confirm('Realmente quer apagar?')) {
+            PessoasService.deletById(id)
+                .then(result => {
+                    if(result instanceof Error) {
+                        alert(result.message);
+                    }else {
+                        // removemos o resistro da listagem 
+                        setRows(oldRows => [
+                            ...oldRows.filter(oldRow => oldRow.id !== id),// aqui trazemos tudos os id da velha lista menos o excluido
+                        ]);
+                        alert('Registro apagado com sucesso!!');
+                    }
+                });
+        }
+    };
     return (
         <LayoutBaseDePagina
             titulo='Listagem de pessoas'
@@ -79,7 +100,14 @@ export const ListagemDePessoas:React.FC = ( ) => {
                     <TableBody>
                         {rows.map(row => (
                             <TableRow key={row.id}>
-                                <TableCell>Ações</TableCell>
+                                <TableCell>
+                                    <IconButton sx={{height: '1.5rem'}} onClick= {() => handleDelete(row.id)}>
+                                        <Icon>delete</Icon>
+                                    </IconButton >
+                                    <IconButton sx={{height: '1.5rem'}} onClick = {() => navigate(`/pessoas/detalhe/${row.id}`)} >
+                                        <Icon>edit</Icon>
+                                    </IconButton>
+                                </TableCell>
                                 <TableCell>{row.nomeCompleto}</TableCell>
                                 <TableCell>{row.email}</TableCell>
                             </TableRow>

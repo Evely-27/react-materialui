@@ -31,8 +31,7 @@ export const AppRoutes = () => {
         <Routes>
             <Route path='/init' element={<Dashboard />} />
             <Route path='/pessoas' element={<ListagemDePessoas />} />
-
-
+            <Route path='/pessoas/detalhe/:id' element={<p>Edição de Pessoa</p>} />
 
             <Route path='*' element={<Navigate to="/init" />} />
 
